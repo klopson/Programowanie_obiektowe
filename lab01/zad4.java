@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class zad4 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in); //brak znaku ; na końcu
+
+            System.out.print("Podaj liczbę: ");
+            int liczba = scanner.nextInt();
+
+            if (liczba % 2 == 0) {     //zamiast = powinno być == ponieważ jeden = przypisuje wartość a nie porównuje
+                System.out.println("Liczba jest parzysta");
+            }
+            else {
+                System.out.println("Liczba jest nieparzysta"); //brak znaku ; na końcu
+            }
+
+            for (int i = 0; i <= 5; i++) {
+                System.out.println(i);           //tutaj kompilator nie wykrywał błędu, lecz cały czas wyświetlał liczby minusowe coraz mniejsze, powinno być i++ zamiast i--
+            }
+
+            scanner.close();
+        }
+
+}

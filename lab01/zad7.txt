@@ -1,0 +1,33 @@
+1. Klasa: Produkt
+
+Najważniejsze dane: ID, nazwa, cena, opis, dostępna ilość (stan magazynowy).
+
+Podstawowe odpowiedzialności: Przechowywanie szczegółów konkretnego towaru, aktualizowanie dostępnej liczby sztuk po zakupie.
+
+2. Klasa: Klient
+
+Najważniejsze dane: ID, imię i nazwisko, adres e-mail, adres dostawy.
+
+Podstawowe odpowiedzialności: Przechowywanie informacji kontaktowych i wysyłkowych użytkownika, autoryzacja w systemie.
+
+3. Klasa: Zamówienie
+
+Najważniejsze dane: ID, data utworzenia, status zamówienia (np. opłacone, wysłane), łączna kwota do zapłaty.
+
+Podstawowe odpowiedzialności: Rejestrowanie całego procesu zakupu, zmiana statusów na podstawie wpłat i wysyłek, obliczanie końcowej wartości całego zamówienia.
+
+4. Klasa: PozycjaZamówienia
+
+Najważniejsze dane: ilość zamawianych sztuk, cena jednostkowa w momencie zakupu.
+
+Podstawowe odpowiedzialności: Reprezentowanie pojedynczego wiersza na paragonie/fakturze. Zabezpiecza historyczną cenę produktu (w razie, gdyby w przyszłości cena w klasie Produkt uległa zmianie).
+
+Odpowiedzi na pytania analityczne:
+
+1. Które obiekty powinny wiedzieć o istnieniu innych obiektów?
+
+Zamówienie musi wiedzieć o Kliencie (aby wiedzieć, do kogo wysłać paczkę) oraz o PozycjachZamówienia (aby wiedzieć, co spakować i ile policzyć).
+
+PozycjaZamówienia musi wiedzieć o Produkcie (aby system wiedział, jaki konkretnie przedmiot fizyczny reprezentuje dany wiersz).
+
+Produkt i Klient są obiektami niezależnymi – nie muszą wiedzieć o sobie nawzajem ani o strukturze samego zamówienia.

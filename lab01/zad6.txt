@@ -1,0 +1,36 @@
+Klasa: Książka
+
+Stan:
+- tytuł
+- autor
+- ISBN
+- rok wydania
+
+Odpowiedzialności:
+- Przechowywanie danych o konkretnej książce.
+- Udostępnianie informacji o książce (np. po numerze ISBN).
+
+
+Klasa: Czytelnik
+
+Stan:
+- imię
+- nazwisko
+- numer karty bibliotecznej
+
+Odpowiedzialności:
+- Przechowywanie danych identyfikacyjnych osoby korzystającej z biblioteki.
+- Umożliwienie weryfikacji czytelnika na podstawie numeru karty bibliotecznej.
+
+
+Klasa: Wypożyczenie
+
+Stan:
+- data wypożyczenia
+- termin zwrotu
+- przypisany czytelnik (powiązanie z obiektem Czytelnik)
+- wypożyczona książka (powiązanie z obiektem Książka)
+
+Odpowiedzialności:
+- Rejestrowanie faktu wypożyczenia danej książki przez konkretnego czytelnika.
+- Przechowywanie i śledzenie terminów wypożyczenia oraz zwrotu.
