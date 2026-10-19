@@ -1,0 +1,35 @@
+Zad 5
+Wyjaśnienie:Zmiana pola w obiekcie copy nie wpłynęła na obiekt original. Stało się tak dlatego, że:   
+Pole mileage jest typu prostego (double) — wartość jest fizycznie kopiowana do nowego miejsca w pamięci.
+Pola typu String (brand, model) są w Javie niezmienne, więc przypisanie nowej wartości tworzy zupełnie nowy obiekt typu String w pamięci, zamiast modyfikować istniejący. 
+Zad 6
+1.powstał jeden obiekt Person
+2.istnieją 2 referencje: first i second
+3.Operacja Person second = first; nie tworzy nowego obiektu ani go nie kopiuje. Kopiuje tylko adres w pamięci przez co obydwie zmienne
+wskazują na ten sam obiekt w pamięci.
+Zad 7
+Użycie słowa new powoduje utworzenie drugiego obiektu, przez co konstruktor kopiujący przepisuje wartości pól z first do second.
+Obydwa obiekty są od siebie całkowicie niezależne więc modyfikacja second nie wpływa na first
+
+Zad 8
+Ponieważ do metody nie przekazuje się całego obiektu, lecz jego referencję (wskaźnik na adres w pamięci).
+
+Zad 9
+zakończy działanie z błędem bo zmienna car nie wskazuje na żaden istniejący obiekt
+
+Zad 10
+ Box a = new Box(10); a=10
+ Box b = a; b=10
+ Box c = new Box(a.value); c=10
+ b.value = 20; a = 20 b = 20 a=b 
+ c.value = 30; c= 30
+
+obiekt 1 box = value 20
+obiekt 2 box = value 30
+
+Zad 11
+1. błędna deklaracja konstruktora. Konstruktory nie mogą mieć zwracanego typu (void) przez dodanie void java traktuje to jako metodę a
+nie konstruktor
+2.brak użycia this przy pisywaniu pól, zapisy name = name; price = price; przypisują parametry same do siebie przez co 
+this.name i this.price są niezainicjowane
+4. słowo this jest referencją do bieżącego obiektu w którym kod jest aktualnie wykonywany. użycie this rozwiązuje konflikt nazw (przysłanianie pól klasy przez parametry metody/konstruktora).
