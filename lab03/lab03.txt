@@ -1,0 +1,49 @@
+Zad 4
+1.tak, modyfikując rawPoints, zmieniamy stan wewnątrz results, bo obie zmienne celują w tę samą tablicę
+
+2.Tak, ktoś z zewnątrz może zmodyfikować wewnętrzne dane klasy
+
+
+ public ExamResults(int[] points) {
+        if (points != null) {
+
+            this.points = points.clone();
+        } else {
+            this.points = new int[0];
+        }
+    }
+
+    public int[] getPoints() {
+
+        return this.points.clone();
+    }
+Zad 6
+1.Stała dotyczy całej klasy i jest wspólna dla wszystkich obiektów, a nie przypisana do konkretnego pojedynczego egzemplarza.
+Dzięki temu nie marnujemy pamięci na kopiowanie tej samej wartości w każdym obiekcie.
+
+2.Słowo final oznacza, że wartość pola jest stała i nie może zostać zmodyfikowana po jej przypisaniu w trakcie działania programu.
+
+3.numberOfProducts to licznik, którego wartość musi się zmieniać (zwiększać o 1 przy każdym wywołaniu konstruktora).
+Gdyby pole było final, Java zabroniłaby modyfikacji jego wartości po zainicjalizowaniu.
+
+Zad 10 
+studentName w klasie Student – instancyjny Uzasadnienie: Każdy student ma swoje własne, indywidualne imię.
+numberOfStudents w klasie Student – statyczny Uzasadnienie: Licznik jest wspólny dla całej klasy i zlicza sumę wszystkich utworzonych studentów.
+PI w klasie matematycznej – statycznyUzasadnienie: Uniwersalna stała matematyczna o jednej wartości, taka sama w całym programie.
+balance w klasie BankAccount – instancyjnyUzasadnienie: Każde konto posiada własne, niezależne saldo.
+calculateVat(double price) w bezstanowej klasie pomocniczej – statyczny Uzasadnienie: Metoda wykonuje obliczenia wyłącznie na podstawie przekazanego argumentu price i nie potrzebuje stanu obiektu.   
+carMileage w klasie Car – instancyjnyUzasadnienie: Każdy samochód ma swój własny przebieg.
+MAX_LOGIN_ATTEMPTS w klasie LoginPolicy – statyczny Uzasadnienie: Ogólna stała konfiguracyjna, taka sama dla całego systemu logowania
+
+Zad 11
+1.Metoda public static void showUser() jest statyczna, ale próbuje odwołać się do pól instancyjnych login oraz password. Metoda statyczna nie ma dostępu do zmiennych instancji.  
+2.Statyczny wiek (static int age) – pole age jest statyczne, co powoduje, że wszyscy użytkownicy w systemie dzielą ten sam wiek (utworzenie nowego obiektu zmienia wiek wszystkim innym).   
+Brak hermetyzacji – pola są public, co pozwala na ich bezpośrednią modyfikację z zewnątrz bez kontroli.   
+Statyczna metoda showUser() – wyświetlanie danych konkretnego użytkownika nie powinno być metodą statyczną.   
+Brak walidacji danych – brak sprawdzenia poprawności wprowadzanych danych (np. ujemnego wieku).
+3.Wszystkie pola (login, password, age) powinny być instancyjne. Każdy użytkownik posiada własny, niezależny login, hasło oraz wiek.
+
+zad 12
+albumNumber (klasa Student):Brak settera: Numer albumu jest nadawany studentowi raz na całe studia i nie powinien być modyfikowany po utworzeniu obiektu.
+numberOfCreatedCourses (klasa Course):Statyczny getter, brak settera: Pole jest wspólne dla całej klasy (zlicza utworzone kursy). Modyfikacja następuje wyłącznie automatycznie w konstruktorze – z zewnątrz dozwolony jest tylko odczyt stanu.
+name i maxStudents (klasy Student i Course):   Gettery i settery z walidacją: Pola mogą się zmienić w trakcie działania programu (np. literówka w nazwie kursu lub zmiana limitu miejsc), ale setter chroni je przed wpisaniem niepoprawnych danych (null, pusty ciąg znaków, wartości ujemne/zero).
