@@ -1,0 +1,21 @@
+Zad 1
+1.Bo jest private, nawet podklasa nie ma do niego dostępu, potrzębny jest do niego getter
+2.bo jest protected a employee dziedziczy po Person
+3.nie, zależy od sytuacji
+
+Zad 2
+nie ma dostępu do protected ponieważ ono działa tylko w podklasach a nie w obcych klasach.
+
+Zad 4
+A->B->C
+
+Zad 9
+initialize()' cannot override 'initialize()' in 'Gamee.Game'; overridden method is final
+Cannot inherit from final class 'Gamee.FinalGame'
+
+final sprawia że nikt nie może po niej dziedziczyć
+Zad 10
+kompiluje się
+
+Zad 12
+Bo wszystkie klasy są pojazdami, każda podklasa jest typem klasy bazowej wiec dziedziczenie ma sens tutaj
