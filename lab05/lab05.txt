@@ -1,0 +1,27 @@
+Zad 5
+Nie, istnieje jeden obiekt Animal animal = dog tworzy drugą referencję
+
+Zad 6
+java.lang.ClassCastException
+
+Zad 8
+ponieważ nie trzeba modyfikować makesound
+
+Zad 9 
+W javie metody podlegają polimorfizowi, a pola nie podlegają
+
+Zad 10
+1.wybierze metodę identify(Animal animal)
+2.wykona wersję metody z makeSound() z klasy Dog
+3.przeciązanie metod - wiązanie statyczne(kompilacja)
+nadpisywanie metod - wiązanie dynamiczne (czas wykonania/runtime)
+
+Zad 11
+true
+true
+true
+false
+false
+true
+
+Zad 12
